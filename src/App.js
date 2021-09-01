@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import DefaultHOC from './HOC/Default.HOC';
+function HomePage (){
+  return (
+    <h1>This is Home Page</h1>
+  );
+}
+
+function ContactPage (){
+  return (
+    <h1>This is Contact Page</h1>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DefaultHOC path='/' exact component={HomePage}></DefaultHOC>
+      <DefaultHOC path='/contact' exact component={ContactPage}></DefaultHOC>
+
+    </>
   );
 }
 
 export default App;
+//switch used to wrap up Route
+
+// Basically Switch used to Advance Routing
